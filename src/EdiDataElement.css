@@ -1,0 +1,14 @@
+.EdiDataElement {
+    display: inline-block;
+    background-color: lightpink;
+    border-radius: 4px;
+    border: 1px solid red;
+    padding: 4px;
+    margin: 1px;
+}
+
+.EdiDataElement.EdiDataElement__Composite {
+    border: 0;
+    padding: 0;
+    margin: 1px;
+}
