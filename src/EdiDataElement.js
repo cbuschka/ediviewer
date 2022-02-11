@@ -11,7 +11,7 @@ export class EdiDataElement extends React.Component {
         const {data = ""} = this.props;
 
         if (isObject(data) && isString(data.value)) {
-            return <span className="EdiDataElement">{data.value}</span>;
+            return <span className="EdiDataElement">{data.value.trim() === "" ? <>&nbsp;</> : data.value}</span>;
         } else if (isObject(data) && isArray(data.values)) {
             return <span className="EdiDataElement EdiDataElement__Composite">{
                 data.values.map((dataElement, index) => {

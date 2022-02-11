@@ -10,10 +10,12 @@ export class EdiReader {
         const lines = data.split("'");
         for (let i = 0; i < lines.length; ++i) {
             const line = lines[i];
-            if (line !== "") {
-                const segment = this.readSegment(line);
-                segments.push(segment);
+            if (line.trim() === "") {
+                continue;
             }
+            
+            const segment = this.readSegment(line);
+            segments.push(segment);
         }
 
         return segments;
