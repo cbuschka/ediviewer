@@ -4,6 +4,7 @@ import {EdiFile} from "./EdiFile";
 import {Dropzone} from "./Dropzone";
 import {EdiReader} from "./EdiReader";
 
+
 export class App extends React.Component {
 
     state = {ediFileData: {segments: []}};

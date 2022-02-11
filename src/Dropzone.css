@@ -1,6 +1,11 @@
 .Dropzone {
     display: block;
     border: 1px dashed gray;
-    padding: 40px;
     text-align: center;
+    border-radius: 5px;
+}
+
+.Dropzone:hover {
+    background-color: lightblue;
+    cursor: pointer;
 }
