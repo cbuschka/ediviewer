@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/ediviewer/static/css/main.669b9c14.css",
-    "main.js": "/ediviewer/static/js/main.14b163e1.js",
+    "main.js": "/ediviewer/static/js/main.4204c42a.js",
     "index.html": "/ediviewer/index.html",
     "main.669b9c14.css.map": "/ediviewer/static/css/main.669b9c14.css.map",
-    "main.14b163e1.js.map": "/ediviewer/static/js/main.14b163e1.js.map"
+    "main.4204c42a.js.map": "/ediviewer/static/js/main.4204c42a.js.map"
   },
   "entrypoints": [
     "static/css/main.669b9c14.css",
-    "static/js/main.14b163e1.js"
+    "static/js/main.4204c42a.js"
   ]
 }
