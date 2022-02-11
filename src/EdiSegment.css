@@ -1,5 +1,10 @@
 .EdiSegment {
     display: block;
+    border: 1px solid white;
+    border-radius: 4px;
+    background-color: whitesmoke;
+    margin-top: 4px;
+    padding: 2px;
 }
 
 .EdiSegment__Tag {
