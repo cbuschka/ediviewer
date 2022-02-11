@@ -20,7 +20,6 @@ export class Dropzone extends React.Component {
                 reader.onerror = () => reject('file reading has failed')
                 reader.onload = () => {
                     const binaryStr = reader.result
-                    console.log(binaryStr)
 
                     resolve({name: file.name, data: binaryStr});
                 }
