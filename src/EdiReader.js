@@ -10,14 +10,20 @@ export class EdiReader {
         const lines = data.split("'");
         for (let i = 0; i < lines.length; ++i) {
             const line = lines[i];
-            const segment = this.readSegment(line);
-            segments.push(segment);
+            if (line !== "") {
+                const segment = this.readSegment(line);
+                segments.push(segment);
+            }
         }
 
         return segments;
     }
 
     readSegment = (line) => {
+        if (line.startsWith("UNA")) {
+            return {tag: {value: line}, dataElements: []};
+        }
+
         const segment = {tag: undefined, dataElements: []};
         const words = line.split('+');
         segment.tag = this.readTag(words[0]);
