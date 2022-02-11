@@ -21,13 +21,17 @@ export class App extends React.Component {
 
         return (
             <div className="App">
-                <h1>EDIViewer</h1>
+                <h1>EDIViewer </h1>
                 <h4>(UN/EDIFACT only, no UNA support, no repetitions.)</h4>
 
                 <Dropzone onChange={this.onChange}/>
 
                 <div className="App__EdiFile">
                     <EdiFile data={ediFileData}/>
+                </div>
+
+                <div className="App__Version">Version: {process.env.REACT_APP_GIT_COMMITISH}, Built
+                    at: {process.env.REACT_APP_BUILD_TIMESTAMP}
                 </div>
             </div>
         );
