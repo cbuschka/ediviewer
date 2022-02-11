@@ -29,8 +29,8 @@
 }
 
 .EdiSegment__Indent0 { margin-left: 0; }
-.EdiSegment__Indent1 { margin-left: 10px; }
-.EdiSegment__Indent2 { margin-left: 20px; }
-.EdiSegment__Indent3 { margin-left: 30px; }
-.EdiSegment__Indent4 { margin-left: 40px; }
-.EdiSegment__Indent5 { margin-left: 50px; }
+.EdiSegment__Indent1 { margin-left: 20px; }
+.EdiSegment__Indent2 { margin-left: 40px; }
+.EdiSegment__Indent3 { margin-left: 60px; }
+.EdiSegment__Indent4 { margin-left: 80px; }
+.EdiSegment__Indent5 { margin-left: 100px; }

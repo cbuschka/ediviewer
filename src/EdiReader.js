@@ -45,7 +45,7 @@ export class EdiReader {
 
     readTag = (word) => {
         const wordParts = word.split(':');
-        const tagName = wordParts[0];
+        const tagName = wordParts[0].trim();
         wordParts.splice(0, 1);
         const values = wordParts.map((wordPart) => {
             return {

@@ -3,7 +3,7 @@ import './EdiFile.css';
 import {EdiSegment} from "./EdiSegment";
 
 
-const indentMod = {
+const indentMods = {
     "UNH": 1,
     "UNT": -1,
 };
@@ -25,8 +25,17 @@ export class EdiFile extends React.Component {
         const content = [];
         for (let i = 0; i < segments.length; ++i) {
             const segment = segments[i];
+            const indentMod = indentMods[segment.tag.value] || 0
+
+            if (indentMod < 0) {
+                indent = indent + indentMod;
+            }
+
             content.push(<EdiSegment key={i} data={segment} indent={indent}/>);
-            indent = indent + (indentMod[segment.tag.value] || 0);
+
+            if (indentMod > 0) {
+                indent = indent + indentMod;
+            }
         }
         return content;
     }
