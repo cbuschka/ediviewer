@@ -1,0 +1,6 @@
+.Dropzone {
+    display: block;
+    border: 1px dashed gray;
+    padding: 40px;
+    margin: 10px;
+}
