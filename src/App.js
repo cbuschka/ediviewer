@@ -22,9 +22,13 @@ export class App extends React.Component {
 
         return (
             <div className="App">
+                <h1>EDIViewer</h1>
+
                 <Dropzone onChange={this.onChange}/>
 
-                <EdiFile data={ediFileData}/>
+                <div className="App__EdiFile">
+                    <EdiFile data={ediFileData}/>
+                </div>
             </div>
         );
     }

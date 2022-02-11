@@ -1,2 +1,10 @@
 .App {
+    padding: 40px;
+}
+
+.App__EdiFile {
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid darkgray;
+    padding: 20px;
 }

@@ -33,12 +33,12 @@ export class Dropzone extends React.Component {
     render() {
         return <ReactDropzone onDrop={this.onFilesAccepted}>
             {({getRootProps, getInputProps}) => (
-                <section className="Dropzone">
+                <div className="Dropzone">
                     <div {...getRootProps()}>
                         <input {...getInputProps()} />
                         <p>Drag 'n' drop some files here, or click to select files</p>
                     </div>
-                </section>
+                </div>
             )}
         </ReactDropzone>;
     }
