@@ -2,33 +2,49 @@ import React from 'react';
 import './App.css';
 import {EdiFile} from "./ui/EdiFile";
 import {Dropzone} from "./ui/Dropzone";
-import {EdiReader} from "./ui/EdiReader";
-
+import {dispatcher} from "@cbuschka/flux";
+import {appStore} from "./backend/appStore";
+import {loadFiles} from './backend/loadFiles';
+import {initApp} from "./backend/initApp";
 
 export class App extends React.Component {
 
-    state = {ediFileData: {segments: []}};
+    state = {ediFile: {segments: []}};
 
-    onChange = async ({data: files}) => {
-        const ediReader = new EdiReader();
-        const ediFileData = ediReader.readFromString(files[0].name, files[0].data);
+    onFilesDropped = async ({data: files}) => {
+        loadFiles(files);
+    }
 
-        this.setState({ediFileData});
+    onChange = ({data}) => {
+        const {app: {ediFile}} = data;
+        this.setState({ediFile});
+    }
+
+    componentDidMount() {
+        dispatcher.addHandler(appStore);
+        dispatcher.subscribe(this.onChange);
+
+        initApp();
+    }
+
+    componentWillUnmount() {
+        dispatcher.unsubscribe(this.onChange);
+        dispatcher.removeHandler(appStore);
     }
 
     render() {
-        const {ediFileData} = this.state;
+        const {ediFile} = this.state;
 
         return (
             <div className="App">
                 <h1>EDIViewer </h1>
                 <h4>(UN/EDIFACT only, no UNA support, no repetitions.)</h4>
 
-                <Dropzone onChange={this.onChange}/>
+                <Dropzone onChange={this.onFilesDropped}/>
 
-                <div className="App__EdiFile">
-                    <EdiFile data={ediFileData}/>
-                </div>
+                {!!ediFile ? <div className="App__EdiFile">
+                    <EdiFile data={ediFile}/>
+                </div> : ""}
 
                 <div className="App__Version">Version: {process.env.REACT_APP_GIT_COMMITISH}, Built
                     at: {process.env.REACT_APP_BUILD_TIMESTAMP}
