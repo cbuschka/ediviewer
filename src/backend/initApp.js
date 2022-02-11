@@ -1,9 +1,16 @@
 import {dispatcher} from "@cbuschka/flux";
 import {EdiReader} from "../ui/EdiReader";
+import {ediFile as exampleEdiFile} from "./exampleData";
 
 export const initApp = async () => {
     const ediFileJson = window.localStorage.getItem("openFiles.0");
-    const ediFile = JSON.parse(ediFileJson);
+    let ediFile;
+    if (!!ediFileJson) {
+        ediFile = JSON.parse(ediFileJson);
+    } else {
+        ediFile = exampleEdiFile;
+        window.localStorage.setItem("openFiles.0", JSON.stringify(exampleEdiFile));
+    }
 
     try {
         const ediReader = new EdiReader();
