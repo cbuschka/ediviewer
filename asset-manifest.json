@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/ediviewer/static/css/main.4bbb46ac.css",
-    "main.js": "/ediviewer/static/js/main.25d6d454.js",
+    "main.css": "/ediviewer/static/css/main.38e9c6f2.css",
+    "main.js": "/ediviewer/static/js/main.4d1f5021.js",
     "index.html": "/ediviewer/index.html",
-    "main.4bbb46ac.css.map": "/ediviewer/static/css/main.4bbb46ac.css.map",
-    "main.25d6d454.js.map": "/ediviewer/static/js/main.25d6d454.js.map"
+    "main.38e9c6f2.css.map": "/ediviewer/static/css/main.38e9c6f2.css.map",
+    "main.4d1f5021.js.map": "/ediviewer/static/js/main.4d1f5021.js.map"
   },
   "entrypoints": [
-    "static/css/main.4bbb46ac.css",
-    "static/js/main.25d6d454.js"
+    "static/css/main.38e9c6f2.css",
+    "static/js/main.4d1f5021.js"
   ]
 }
