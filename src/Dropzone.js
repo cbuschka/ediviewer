@@ -23,7 +23,7 @@ export class Dropzone extends React.Component {
 
                     resolve({name: file.name, data: binaryStr});
                 }
-                reader.readAsBinaryString(file);
+                reader.readAsText(file, "utf-8");
             });
         }));
         onChange({data: fileStrings});
