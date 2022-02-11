@@ -1,5 +1,7 @@
 # ediviewer - an edifact files web viewer
 
+[EDIViewer app on github pages](https://cbuschka.github.io/ediviewer/)
+
 ![Screenshot](./doc/screenshot.png)
 
 ## License
