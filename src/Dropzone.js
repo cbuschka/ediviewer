@@ -36,7 +36,8 @@ export class Dropzone extends React.Component {
                 <div className="Dropzone">
                     <div {...getRootProps()}>
                         <input {...getInputProps()} />
-                        <p>Drag 'n' drop some files here, or click to select files</p>
+                        <p>Drag 'n' drop some files here, or click to select files.</p>
+                        <p>(Data won't be sent to a server. All processing will take place in your browser locally.)</p>
                     </div>
                 </div>
             )}
