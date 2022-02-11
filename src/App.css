@@ -10,7 +10,7 @@
     padding: 20px;
 }
 
-.App__Version {
+.App__Footer {
     color: black;
     padding: 2px;
     position: fixed;
@@ -18,6 +18,5 @@
     right: 0;
     display: block;
     font-size: small;
-    font-weight: lighter;
     background-color: white;
 }

@@ -46,7 +46,9 @@ export class App extends React.Component {
                     <EdiFile data={ediFile}/>
                 </div> : ""}
 
-                <div className="App__Version">Version: {process.env.REACT_APP_GIT_COMMITISH}, Built
+                <div className="App__Footer">
+                    <a href="https://github.com/cbuschka/ediviewer/" target="_blank" rel="noopener noreferrer">github
+                        project</a> | Version: {process.env.REACT_APP_GIT_COMMITISH} | Built
                     at: {process.env.REACT_APP_BUILD_TIMESTAMP}
                 </div>
             </div>
