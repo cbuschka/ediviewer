@@ -8,11 +8,11 @@ export class App extends React.Component {
 
     state = {ediFileData: {segments: []}};
 
-    onChange = async ({data: fileStrings}) => {
-        console.log("got %o", fileStrings);
+    onChange = async ({data: files}) => {
+        console.log("got %o", files);
 
         let ediReader = new EdiReader();
-        const ediFileData = ediReader.readFromString(fileStrings[0]);
+        const ediFileData = ediReader.readFromString(files[0].name, files[0].data);
 
         this.setState({ediFileData});
     }

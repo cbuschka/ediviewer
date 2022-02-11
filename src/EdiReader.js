@@ -1,8 +1,8 @@
 export class EdiReader {
 
-    readFromString(data) {
+    readFromString(name, data) {
         const segments = this.readSegments(data);
-        return {segments};
+        return {name, segments};
     }
 
     readSegments = (data) => {

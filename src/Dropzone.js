@@ -22,7 +22,7 @@ export class Dropzone extends React.Component {
                     const binaryStr = reader.result
                     console.log(binaryStr)
 
-                    resolve(binaryStr);
+                    resolve({name: file.name, data: binaryStr});
                 }
                 reader.readAsBinaryString(file);
             });

@@ -5,10 +5,11 @@ import {EdiSegment} from "./EdiSegment";
 export class EdiFile extends React.Component {
 
     render() {
-        const {data: {segments = []}} = this.props;
+        const {data: {name, segments = []}} = this.props;
 
-        return <div>{segments.map((segment, index) => {
-            return <EdiSegment key={index} data={segment}/>;
-        })}</div>;
+        return <div><h2>{name}</h2>
+            {segments.map((segment, index) => {
+                return <EdiSegment key={index} data={segment}/>;
+            })}</div>;
     }
 }
