@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import {EdiFile} from "./EdiFile";
-import {Dropzone} from "./Dropzone";
-import {EdiReader} from "./EdiReader";
+import {EdiFile} from "./ui/EdiFile";
+import {Dropzone} from "./ui/Dropzone";
+import {EdiReader} from "./ui/EdiReader";
 
 
 export class App extends React.Component {
