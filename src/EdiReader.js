@@ -21,7 +21,7 @@ export class EdiReader {
 
     readSegment = (line) => {
         if (line.startsWith("UNA")) {
-            return {tag: {value: line}, dataElements: []};
+            return this.readUNASegment(line);
         }
 
         const segment = {tag: undefined, dataElements: []};
@@ -29,6 +29,14 @@ export class EdiReader {
         segment.tag = this.readTag(words[0]);
         words.splice(0, 1);
         segment.dataElements = this.readDataElements(words);
+        return segment;
+    }
+
+    readUNASegment = (line) => {
+        const segment = {tag: {value: "UNA"}, dataElements: []};
+        for (let i = 3; i < line.length; ++i) {
+            segment.dataElements.push({value: line.charAt(i)});
+        }
         return segment;
     }
 
