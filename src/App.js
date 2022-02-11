@@ -21,6 +21,7 @@ export class App extends React.Component {
         return (
             <div className="App">
                 <h1>EDIViewer</h1>
+                <h4>(UN/EDIFACT only, no UNA support, no repetitions.)</h4>
 
                 <Dropzone onChange={this.onChange}/>
 
