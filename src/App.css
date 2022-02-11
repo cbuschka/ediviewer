@@ -4,6 +4,8 @@
 }
 
 .App__EdiFile {
+    background-color: white;
+    opacity: 0.95;
     margin-top: 10px;
     border-radius: 5px;
     border: 1px solid darkgray;
@@ -19,4 +21,5 @@
     display: block;
     font-size: small;
     background-color: white;
+    opacity: 0.96;
 }
