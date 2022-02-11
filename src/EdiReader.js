@@ -13,7 +13,7 @@ export class EdiReader {
             if (line.trim() === "") {
                 continue;
             }
-            
+
             const segment = this.readSegment(line);
             segments.push(segment);
         }
@@ -39,6 +39,7 @@ export class EdiReader {
         for (let i = 3; i < line.length; ++i) {
             segment.dataElements.push({value: line.charAt(i)});
         }
+        segment.dataElements.push({value: "'"});
         return segment;
     }
 
