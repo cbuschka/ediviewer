@@ -38,7 +38,7 @@ export class App extends React.Component {
         return (
             <div className="App">
                 <a href="https://cbuschka.github.io/ediviewer/" rel="noopener noreferrer"><h1>EDIViewer</h1></a>
-                <h4>(UN/EDIFACT only, no UNA support, no repetitions.)</h4>
+                <h4>(UN/EDIFACT only, UNA support, no repetitions.)</h4>
 
                 <Dropzone onChange={this.onFilesDropped}/>
 
