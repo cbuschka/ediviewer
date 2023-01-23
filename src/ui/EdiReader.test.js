@@ -1,6 +1,7 @@
 import {EdiReader} from "./EdiReader";
 
-const ediData = "UNH+ME000001+INVRPT:D:01B:UN:EAN007'"
+describe('parsing without una', () => {
+const ediDataWithoutUna = "UNH+ME000001+INVRPT:D:01B:UN:EAN007'"
     + "BGM+35+IVR21599+9'"
     + "DTM+137:20020301:102'"
     + "DTM+366:20020228:102'"
@@ -27,11 +28,28 @@ const ediData = "UNH+ME000001+INVRPT:D:01B:UN:EAN007'"
     + "PRI+AAB:540:CA:RTP'"
     + "UNT+31+ME000001'";
 
-test('parses', () => {
-    const ediReader = new EdiReader();
-    const ediFile = ediReader.readFromString(ediData);
+    test('parses non una inv', () => {
+        const ediReader = new EdiReader();
+        const ediFile = ediReader.readFromString("name", ediDataWithoutUna);
 
-    expect(ediFile.segments[0].tag.value).toBe("UNH");
-    expect(ediFile.segments[1].tag.value).toBe("BGM");
-    expect(ediFile.segments.length).toBe(27);
+        expect(ediFile.segments[0].tag.value).toBe("UNH");
+        expect(ediFile.segments[1].tag.value).toBe("BGM");
+        expect(ediFile.segments[25].tag.value).toBe("UNT");
+        expect(ediFile.segments.length).toBe(26);
+    });
+
+    test('parses una inv', () => {
+        const ediDataWithUna = "UNA;|.? !"
+            + ediDataWithoutUna.replace(/:/g, ";").replace(/\+/g, "|").replace(/'/g, "!");
+
+        const ediReader = new EdiReader();
+        const ediFile = ediReader.readFromString("name", ediDataWithUna);
+
+        expect(ediFile.segments[0].tag.value).toBe("UNA");
+        expect(ediFile.segments[1].tag.value).toBe("UNH");
+        expect(ediFile.segments[2].tag.value).toBe("BGM");
+        expect(ediFile.segments[26].tag.value).toBe("UNT");
+        expect(ediFile.segments.length).toBe(27);
+    });
+
 });
