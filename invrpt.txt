@@ -1,0 +1,14 @@
+UNA:+.? '
+UNB+UNOC:3+Y:65+X:52+010308:1107+123'
+UNH+1+ORDRSP:D:96B:UN:DESN11'
+BGM+22E+123456'
+DTM+4:20010308:102'
+DTM+2:20010311:102'
+RFF+VN: 01321864864’
+NAD+SU+4300001000009::9++Institut für
+Technologietransfer:in der elektronischen
+Kommunikation+Technologiepark 19+Paderborn++33100+DE'
+LIN+1++4312345123459:EN'
+QTY+12:10:PCE'
+UNT+12+1'
+UNZ+1+123'
